@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="10dp"
+    android:background="@android:color/transparent">
+
+    <View
+        android:id="@+id/vColorIndic"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:background="@drawable/bg_circle"
+        android:backgroundTint="#F8D0D8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <com.google.android.material.divider.MaterialDivider
+        android:id="@+id/mdSpace"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@id/vColorIndic"
+        app:layout_constraintEnd_toStartOf="@id/tvNoteTitle"/>
+
+    <TextView
+        android:id="@+id/tvNoteTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Gift list"
+        android:textColor="#14213D"
+        android:textSize="18sp"
+        android:fontFamily="@font/segoe_ui_bold"
+        android:layout_marginStart="8dp"
+        android:textStyle="bold"
+        android:maxLength="13"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/tvNoteDateDelete"
+        app:layout_constraintStart_toEndOf="@id/mdSpace"/>
+
+    <TextView
+        android:id="@+id/tvNoteDateDelete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Deleted today"
+        android:textColor="#9914213D"
+        android:textSize="14.7sp"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/segoe_ui_true"
+        app:layout_constraintTop_toBottomOf="@id/tvNoteTitle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/mdSpace"/>
+
+    <TextView
+        android:id="@+id/btnRestore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Restore"
+        android:textStyle="bold"
+        android:fontFamily="@font/segoe_ui_bold"
+        android:textColor="#0F8B8D"
+        android:textSize="17sp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintEnd_toStartOf="@+id/btnDelete"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <TextView
+        android:id="@+id/btnDelete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Deleted"
+        android:textColor="#D6455D"
+        android:textStyle="bold"
+        android:textSize="17sp"
+        android:fontFamily="@font/segoe_ui_bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

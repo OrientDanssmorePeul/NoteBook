@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="CustomChipStyle">
+        <item name="android:checkable">true</item>
+        <item name="chipIconVisible">false</item>
+        <item name="checkedIconVisible">false</item>
+        <item name="closeIconVisible">false</item>
+        <item name="chipStrokeColor">@color/cl_stroke</item>
+        <item name="chipStrokeWidth">1dp</item>
+    </style>
+    <style name="CustomChipNameStyle">
+        <item name="android:checkable">true</item>
+        <item name="chipIconVisible">false</item>
+        <item name="checkedIconVisible">false</item>
+        <item name="closeIconVisible">false</item>
+        <item name="chipStrokeColor">@color/cl_stroke_two</item>
+        <item name="chipBackgroundColor">@color/cl_background</item>
+        <item name="android:textColor">@color/cl_text</item>
+        <item name="chipStrokeWidth">0dp</item>
+    </style>
+</resources>

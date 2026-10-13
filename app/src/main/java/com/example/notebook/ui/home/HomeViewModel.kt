@@ -1,4 +1,4 @@
-package com.example.notebook.ui
+package com.example.notebook.ui.home
 
 import androidx.lifecycle.ViewModel
 

@@ -1,5 +1,6 @@
 plugins {
     alias(libs.plugins.android.application)
+    id("androidx.navigation.safeargs.kotlin")
     alias(libs.plugins.google.gms.google.services)
 }
 
@@ -31,6 +32,9 @@ android {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
@@ -48,4 +52,8 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(libs.androidx.junit)
+
+
+    implementation("androidx.navigation:navigation-fragment-ktx:2.10.2")
+    implementation("androidx.navigation:navigation-ui-ktx:2.10.2")
 }

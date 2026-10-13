@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/clWrapper"
+    android:background="#CDE8F6"
+    tools:context=".ui.create.CreateFragment">
+
+    <ImageButton
+        android:id="@+id/btnBack"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/bg_trash"
+        android:padding="16dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_back"
+        app:layout_constraintBottom_toTopOf="@id/mdSpace"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:background="@drawable/bg_update"
+        android:textColor="#fff"
+        android:text="Save"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="15dp"
+        app:backgroundTint="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/mdSpace"/>
+
+    <TextView
+        android:id="@+id/tvNewTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="New note"
+        android:textStyle="bold"
+        android:textColor="#14213D"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@id/btnBack"
+        app:layout_constraintEnd_toStartOf="@id/btnSave"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/mdSpace"/>
+
+    <com.google.android.material.divider.MaterialDivider
+        android:id="@+id/mdSpace"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@id/etNoteTitle"
+        app:layout_constraintTop_toBottomOf="@id/tvNewTitle"/>
+
+    <EditText
+        android:id="@+id/etNoteTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:layout_marginHorizontal="20dp"
+        android:background="@null"
+        android:autofillHints="@null"
+        android:hint="Example"
+        android:inputType="text"
+        android:textColor="#14213D"
+        android:textStyle="bold"
+        android:textSize="34sp"
+        app:layout_constraintTop_toBottomOf="@id/mdSpace"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <ScrollView
+        android:id="@+id/svWrapper"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:paddingHorizontal="20dp"
+        android:layout_marginTop="18dp"
+        android:paddingBottom="280dp"
+        android:clipToPadding="false"
+        app:layout_constraintTop_toBottomOf="@id/etNoteTitle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+        <EditText
+            android:id="@+id/etNoteContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:autofillHints="@null"
+            android:hint="Start writing..."
+            android:inputType="textMultiLine"
+            android:textSize="16.5sp"
+            android:textColor="#14213D" />
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/tvColourTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="Colour"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/sVChipWrapper" />
+
+    <HorizontalScrollView
+        android:id="@+id/sVChipWrapper"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="20dp"
+        android:clipToPadding="false"
+        android:scrollbars="none"
+        android:layout_marginBottom="135dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/cgColors"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:singleLine="true"
+            app:singleSelection="true"
+            app:selectionRequired="true">
+            <com.google.android.material.chip.Chip
+                android:id="@+id/CDE8F6"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:checked="false"
+                style="@style/CustomChipStyle"
+                app:chipBackgroundColor="#CDE8F6"
+                app:chipCornerRadius="100dp"/>
+            <com.google.android.material.chip.Chip
+                android:id="@+id/CFEEDD"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:checked="false"
+                style="@style/CustomChipStyle"
+                app:chipBackgroundColor="#CFEEDD"
+                app:chipCornerRadius="25dp"/>
+            <com.google.android.material.chip.Chip
+                android:id="@+id/FBEFB5"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:checked="false"
+                style="@style/CustomChipStyle"
+                app:chipBackgroundColor="#FBEFB5"
+                app:chipCornerRadius="25dp"/>
+            <com.google.android.material.chip.Chip
+                android:id="@+id/FAD9C4"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:checked="false"
+                style="@style/CustomChipStyle"
+                app:chipBackgroundColor="#FAD9C4"
+                app:chipCornerRadius="25dp"/>
+            <com.google.android.material.chip.Chip
+                android:id="@+id/F8D0D8"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:checked="false"
+                style="@style/CustomChipStyle"
+                app:chipBackgroundColor="#F8D0D8"
+                app:chipCornerRadius="25dp"/>
+            <com.google.android.material.chip.Chip
+                android:id="@+id/DDD8F7"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:checked="false"
+                style="@style/CustomChipStyle"
+                app:chipBackgroundColor="#DDD8F7"
+                app:chipCornerRadius="25dp"/>
+        </com.google.android.material.chip.ChipGroup>
+    </HorizontalScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
