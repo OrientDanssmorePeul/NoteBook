@@ -1,13 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.login.LoginFragment">
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Hello" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:background="@drawable/bg_search"
+        android:padding="20dp"
+        android:layout_marginHorizontal="40dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Login User"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:textColor="@color/black"
+            android:layout_marginBottom="40dp"/>
+
+        <EditText
+            android:id="@+id/tvEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_search"
+            android:paddingVertical="15dp"
+            android:paddingHorizontal="20dp"
+            android:textColor="@color/black"
+            android:textColorHint="@android:color/system_secondary_dim_dark"
+            android:hint="Email"/>
+
+        <EditText
+            android:id="@+id/tvPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_search"
+            android:paddingVertical="15dp"
+            android:paddingHorizontal="20dp"
+            android:textColor="@color/black"
+            android:hint="Password"
+            android:textColorHint="@android:color/system_secondary_dim_dark"
+            android:layout_marginTop="10dp"/>
+
+        <Button
+            android:id="@+id/btnLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:backgroundTint="#7DD0A3"
+            android:text="Login"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/tvRegister"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="8dp"
+            android:text="Dont Have An Account? Register Here"
+            android:textAlignment="center"
+            android:textColor="@color/black" />
+
+    </LinearLayout>
 
 </FrameLayout>
