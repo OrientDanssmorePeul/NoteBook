@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.core.view.forEach
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import com.example.notebook.core.AuthService
 import com.example.notebook.data.model.PastelPalette
 import com.example.notebook.databinding.FragmentCreateBinding
 import com.google.android.material.chip.Chip

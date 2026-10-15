@@ -7,6 +7,7 @@ import androidx.lifecycle.viewModelScope
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
 import com.example.notebook.MyApp
+import com.example.notebook.core.AuthService
 import com.example.notebook.data.model.Note
 import com.example.notebook.data.model.PastelPalette
 import com.example.notebook.data.repo.NoteRepo
@@ -31,6 +32,7 @@ class CreateViewModel(
         viewModelScope.launch(Dispatchers.IO) {
             repo.insertNote(
                 Note(
+                    userId = AuthService.getUserId(),
                     title = title,
                     content = content,
                     colour = _colourNote.value

@@ -1,5 +1,6 @@
 package com.example.notebook.ui.home
 
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -12,6 +13,8 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
+import com.example.notebook.AuthActivity
+import com.example.notebook.core.AuthService
 import com.example.notebook.data.model.PastelPalette
 import com.example.notebook.databinding.FragmentHomeBinding
 import com.example.notebook.ui.adapter.DecorationAdapter
@@ -98,6 +101,13 @@ class HomeFragment : Fragment() {
             btnTrash.setOnClickListener {
                 val action = HomeFragmentDirections.actionHomeFragmentToTrashFragment()
                 findNavController().navigate(action)
+            }
+            btnLogout.setOnClickListener {
+                AuthService.logout()
+                val intent = Intent(requireActivity(), AuthActivity::class.java)
+                startActivity(intent)
+                requireActivity().finish()
+                return@setOnClickListener
             }
             etSearch.doAfterTextChanged {
                 viewModel.onSearchQueryChanged(it.toString().trim())

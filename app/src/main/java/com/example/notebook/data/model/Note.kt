@@ -5,6 +5,7 @@ import android.util.Log
 
 data class Note(
     val id: String? = null,
+    val userId: String? = null,
     val title: String = "",
     val content: String = "",
     val colour: PastelPalette = PastelPalette.WHITE,
@@ -15,6 +16,7 @@ data class Note(
 ) {
     fun toHashMap(): Map<String, Any?> {
         return mapOf(
+            "userId" to userId,
             "title" to title,
             "content" to content,
             "colour" to colour.name,
@@ -27,9 +29,9 @@ data class Note(
 
     companion object {
         fun fromHashMap(map: Map<String, Any>, id: String): Note {
-            Log.d("IDIIDID", "${map}")
             return Note(
                 id,
+                map["userId"].toString(),
                 map["title"].toString(),
                 map["content"].toString(),
                 PastelPalette.valueOf(map["colour"].toString()),

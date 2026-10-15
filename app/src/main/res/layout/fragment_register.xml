@@ -45,11 +45,12 @@
             android:paddingHorizontal="20dp"
             android:textColor="@color/black"
             android:hint="Password"
+            android:inputType="textPassword"
             android:textColorHint="@android:color/system_secondary_dim_dark"
             android:layout_marginTop="10dp"/>
 
         <Button
-            android:id="@+id/btnLogin"
+            android:id="@+id/btnRegister"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"

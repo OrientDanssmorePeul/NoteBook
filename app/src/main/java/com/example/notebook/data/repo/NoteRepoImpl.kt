@@ -1,5 +1,6 @@
 package com.example.notebook.data.repo
 
+import com.example.notebook.core.AuthService
 import com.example.notebook.data.model.Note
 import com.google.firebase.firestore.CollectionReference
 import kotlinx.coroutines.channels.awaitClose
@@ -21,7 +22,9 @@ class NoteRepoImpl(
                 for (item in items) {
                     item.data?.let {
                         if (it["inTrash"] != isTrashed) continue
-                        notes.add(Note.fromHashMap(it, item.id))
+                        if (it["userId"] == AuthService.getUserId()) {
+                            notes.add(Note.fromHashMap(it, item.id))
+                        }
                     }
                 }
                 trySend(notes)

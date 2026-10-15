@@ -9,7 +9,6 @@ class MyApp: Application() {
     lateinit var noteRepo: NoteRepo
     override fun onCreate() {
         super.onCreate()
-
         noteRepo = NoteRepoImpl(
             FirebaseFirestore.getInstance().collection("notes")
         )
